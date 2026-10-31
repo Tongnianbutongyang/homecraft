@@ -1,18 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#7fb2e8">
+<meta name="theme-color" content="#f5c6a5">
 <!-- The world draws its own day and night. -->
 <meta name="color-scheme" content="only light">
 <meta name="darkreader-lock">
-<title>My Home</title>
-<meta name="description" content="">
+<title>老猪工作室 · Oldpig Studio</title>
+<meta name="description" content="方块世界里的工作室入口：展厅、控制台、API 灯塔与酒馆。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="My Home">
-<meta property="og:description" content="">
+<meta property="og:title" content="老猪工作室 · Oldpig Studio">
+<meta property="og:description" content="方块世界里的工作室入口：展厅、控制台、API 灯塔与酒馆。">
 <meta property="og:image" content="assets/og.jpg">
+<meta property="og:url" content="https://home.oldpig91.com/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="engine/style.css">
@@ -24,46 +25,103 @@
 }}</script>
 </head>
 <body>
-<main id="world" aria-label="My Home"></main>
+<main id="world" aria-label="老猪工作室 Oldpig Studio"></main>
 <div id="loading"><div class="bar"><i></i></div></div>
 
 <section id="pages">
-  <h1 class="plain-title">My Home</h1>
+  <h1 class="plain-title">老猪工作室</h1>
 
   <article class="page" data-station="about">
-    <h2 data-zh="关于我">About me</h2>
+    <h2 data-en="About">关于工作室</h2>
     <div class="about">
-      <div class="about-text" lang="en">
-        <p>Add your introduction</p>
-        <div class="about-foot"><a class="mc-button" href="#contact" data-open="phone">Follow</a><a class="mc-button" href="#mailbox" data-open="mailbox">Mailbox</a></div>
-      </div>
       <div class="about-text" lang="zh-CN">
-        <p>填写你的介绍</p>
+        <p>欢迎来到 <strong>老猪工作室 / Oldpig Studio</strong>。这是一座软陶色的方块小岛：西边是展厅，东边是 OMC 控制台，北边是 API 灯塔，东南是酒馆。走近建筑按 F，或点 Dock 打开卡片。</p>
+        <p>主站与工具仍跑在 <a href="https://www.oldpig91.com/" target="_blank" rel="noopener">www.oldpig91.com</a>；这里只做访客友好的入口，不展示密钥或代理入口。</p>
         <div class="about-foot"><a class="mc-button" href="#contact" data-open="phone">关注</a><a class="mc-button" href="#mailbox" data-open="mailbox">留言</a></div>
+      </div>
+      <div class="about-text" lang="en">
+        <p>Welcome to <strong>Oldpig Studio</strong>. A soft-clay island: gallery to the west, OMC console to the east, API lighthouse to the north, tavern to the southeast. Walk up and press F, or use the Dock.</p>
+        <p>Live services stay on <a href="https://www.oldpig91.com/" target="_blank" rel="noopener">www.oldpig91.com</a>. This home is a visitor-facing gate — no secrets or proxy endpoints.</p>
+        <div class="about-foot"><a class="mc-button" href="#contact" data-open="phone">Follow</a><a class="mc-button" href="#mailbox" data-open="mailbox">Mailbox</a></div>
       </div>
     </div>
   </article>
 
-  <article class="page" data-station="blog" data-icon="blog">
-    <h2 data-zh="个人主页">Website</h2>
-    <div class="placeholder-card"><p data-zh="填写你的个人主页链接">Add your website link</p></div>
+  <article class="page" data-station="works" data-icon="works">
+    <h2 data-en="Gallery">展厅</h2>
+    <ul class="store">
+      <li data-work="homecraft">
+        <div class="listing">
+          <img src="assets/favicon.png" alt="" width="64" height="64">
+          <div>
+            <h3>Homecraft 个人站</h3>
+            <p data-en="This 3D studio world">你正在逛的这座 3D 工作室</p>
+          </div>
+          <a class="mc-button get" href="https://github.com/Tongnianbutongyang/homecraft" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+      <li data-work="github">
+        <div class="listing">
+          <img src="assets/favicon.png" alt="" width="64" height="64">
+          <div>
+            <h3>GitHub</h3>
+            <p data-en="Repos and side projects">代码仓库与小项目</p>
+          </div>
+          <a class="mc-button get" href="https://github.com/Tongnianbutongyang" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+      <li data-work="main">
+        <div class="listing">
+          <img src="assets/favicon.png" alt="" width="64" height="64">
+          <div>
+            <h3>www.oldpig91.com</h3>
+            <p data-en="Main site and tools">主站与在线工具</p>
+          </div>
+          <a class="mc-button get" href="https://www.oldpig91.com/" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <article class="page" data-station="omc" data-icon="lab" data-embed="https://www.oldpig91.com/omc/">
+    <h2 data-en="Console">控制台机房</h2>
+    <p data-en="OMC admin console. Needs your login; use ↗ if the embed is blocked.">OMC 管理台。需要登录；若内嵌被拦截，点标题栏 ↗ 新开。</p>
+    <p><a href="https://www.oldpig91.com/omc/" target="_blank" rel="noopener" data-en="Open OMC">打开 OMC</a></p>
+  </article>
+
+  <article class="page" data-station="lighthouse" data-icon="eye" data-embed="assets/cpa-status.html">
+    <h2 data-en="API Lighthouse">API 灯塔</h2>
+    <p data-en="Public status notes only — no API keys.">只放公开说明，不含 API Key。</p>
+    <p><a href="assets/cpa-status.html" target="_blank" rel="noopener" data-en="Open status page">打开说明页</a> · <a href="https://www.oldpig91.com/" target="_blank" rel="noopener" data-en="Main site">主站</a></p>
+  </article>
+
+  <article class="page" data-station="tv" data-icon="coffee" data-embed="https://tv.oldpig91.com/">
+    <h2 data-en="Tavern / TV">酒馆 / TV</h2>
+    <p data-en="TV / tavern front. Use ↗ if the embed is blocked.">影音 / 酒馆入口。若内嵌被拦截，点 ↗ 新开。</p>
+    <p><a href="https://tv.oldpig91.com/" target="_blank" rel="noopener" data-en="Open TV">打开 TV</a></p>
+  </article>
+
+  <article class="page" data-station="blog" data-icon="blog" data-link="https://www.oldpig91.com/">
+    <h2 data-en="Website">个人主页</h2>
+    <p data-en="Jump to the main site.">跳转到主站。</p>
+    <p><a href="https://www.oldpig91.com/" target="_blank" rel="noopener" data-en="Open www.oldpig91.com">打开 www.oldpig91.com</a></p>
   </article>
 
   <article class="page" id="contact" data-station="contact">
-    <h2 data-zh="关注">Follow</h2>
-    <p data-zh="填写你的联系方式">Add your contact details</p>
+    <h2 data-en="Follow">关注</h2>
     <ul class="contact">
-      <li data-app="github"><span>GitHub</span><a data-zh="填写 GitHub 链接">Add your GitHub link</a><p></p></li>
+      <li data-app="github"><span>GitHub</span><a href="https://github.com/Tongnianbutongyang" target="_blank" rel="noopener">Tongnianbutongyang</a><p data-en="Code and side projects">代码和小项目</p></li>
+      <li data-app="blog"><span data-en="Home">主站</span><a href="https://www.oldpig91.com/" target="_blank" rel="noopener">www.oldpig91.com</a><p data-en="Studio tools and CPA">工作室工具与 CPA</p></li>
     </ul>
   </article>
 
   <article class="page" id="mailbox" data-station="mailbox">
-    <h2 data-zh="留言">Mailbox</h2>
+    <h2 data-en="Mailbox">留言</h2>
     <form class="mailbox" method="post" enctype="text/plain">
-      <textarea name="message" rows="6" maxlength="1000" required placeholder="Write something" aria-label="Write something" data-zh-placeholder="输入文字" data-zh-label="输入文字"></textarea>
-      <input name="contact" maxlength="120" required autocomplete="email" placeholder="Email or other contact (required)" aria-label="How to reach you (required)" data-zh-placeholder="联系方式（必填，邮箱或微信等）" data-zh-label="联系方式，必填">
+      <textarea name="message" rows="6" maxlength="1000" required placeholder="输入文字" aria-label="输入文字" data-en-placeholder="Write something" data-en-label="Write something"></textarea>
+      <input name="contact" maxlength="120" required autocomplete="email" placeholder="联系方式（必填，邮箱或微信等）" aria-label="联系方式，必填" data-en-placeholder="Email or other contact (required)" data-en-label="How to reach you (required)">
       <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="mailbox-foot"><button class="mc-button" type="submit" data-zh="发送" disabled>Send</button></div>
+      <div class="mailbox-foot"><button class="mc-button" type="submit" data-en="Send" disabled>发送</button></div>
       <p class="mailbox-status" role="status" aria-live="polite"></p>
     </form>
   </article>

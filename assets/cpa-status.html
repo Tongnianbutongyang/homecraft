@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CPA 灯塔 / API Lighthouse</title>
+<style>
+:root { color-scheme: light; color: #3d342c; background: #fbf7f0; font: 16px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+body { margin: 0; }
+main { max-width: 640px; margin: auto; padding: 36px 22px 48px; }
+h1 { font-size: 24px; margin: 0 0 8px; color: #5c4638; }
+.tag { display: inline-block; padding: 2px 10px; border-radius: 999px; background: #f4d7c3; color: #7a4e36; font-size: 13px; margin-bottom: 18px; }
+.card { background: #fffaf3; border: 1px solid #edd9c4; border-radius: 16px; padding: 18px 18px 14px; margin: 0 0 14px; box-shadow: 0 8px 24px rgba(120, 80, 40, 0.06); }
+.card h2 { margin: 0 0 8px; font-size: 17px; }
+.card p { margin: 0 0 8px; color: #6a5a4c; }
+.note { font-size: 13px; color: #8a7462; }
+a { color: #b4693d; }
+:root:lang(zh-CN) [lang="en"], :root:lang(en) [lang="zh-CN"] { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <div lang="zh-CN">
+    <h1>API 灯塔</h1>
+    <div class="tag">公开说明 · 不含密钥</div>
+    <div class="card">
+      <h2>Oldpig CPA</h2>
+      <p>兼容 OpenAI 风格的聚合网关，跑在 <code>www.oldpig91.com</code>。这里只放访客可读的说明，不展示 API Key、管理后台或隧道细节。</p>
+      <p><a href="https://www.oldpig91.com/" target="_blank" rel="noopener">打开主站入口</a></p>
+    </div>
+    <div class="card">
+      <h2>怎么用</h2>
+      <p>已有账号的朋友请走正式文档与控制台；访客可以在展厅看相关作品，或通过留言板联系老猪。</p>
+      <p class="note">本页刻意不内嵌带鉴权的 CPA 接口，避免误暴露密钥。</p>
+    </div>
+  </div>
+  <div lang="en">
+    <h1>API Lighthouse</h1>
+    <div class="tag">Public notes · no secrets</div>
+    <div class="card">
+      <h2>Oldpig CPA</h2>
+      <p>An OpenAI-compatible gateway at <code>www.oldpig91.com</code>. This card is visitor-facing only — no API keys, admin UI, or tunnel details.</p>
+      <p><a href="https://www.oldpig91.com/" target="_blank" rel="noopener">Open the main site</a></p>
+    </div>
+    <div class="card">
+      <h2>How to use</h2>
+      <p>Account holders should use the real docs and console. Visitors can browse the gallery or leave a mailbox note.</p>
+      <p class="note">Authenticated CPA endpoints are intentionally not embedded here.</p>
+    </div>
+  </div>
+</main>
+<script>
+let language = navigator.language;
+try { if (parent !== window) language = parent.document.documentElement.lang; } catch {}
+document.documentElement.lang = language.toLowerCase().startsWith('zh') ? 'zh-CN' : 'en';
+</script>
+</body>
+</html>
