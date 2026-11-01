@@ -27,6 +27,17 @@ export const STATIONS = [
   { id: 'portal', name: '传送门', en: 'Portal', icon: 'portal', at: [PORTAL.x + Math.sin(PORTAL.yaw) * 2.4, PORTAL.z + Math.cos(PORTAL.yaw) * 2.4], look: [PORTAL.x, PORTAL.z] },
 ];
 
+
+const inside = (r, x, z) => x >= r.x0 && x < r.x1 && z >= r.z0 && z < r.z1;
+
+// Standing height: pavilion floors are solid voxels at y=0 (top at y=1).
+export function floorAt(x, z) {
+  if (inside(GALLERY, x, z) || inside(CONSOLE, x, z) || inside(TAVERN, x, z)) return 1;
+  const L = LIGHTHOUSE;
+  if (x >= L.x - 1 && x < L.x + 2 && z >= L.z - 1 && z < L.z + 2) return 1;
+  return 0;
+}
+
 // Perimeter trees, clearing the plaza, path, and building doors.
 export const TREES = [
   [-28, -18], [-22, -20], [-14, -22], [-4, -22], [8, -22], [18, -20], [28, -16],

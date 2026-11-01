@@ -60,9 +60,9 @@ export function build({ grid, layer, materials }) {
   defineClay(grid);
   buildIsland(grid, ISLAND, { surfaceAt: () => 'grass', corner: 10, wobble: 0 });
 
-  // Soft clay path from spawn up to the plaza.
-  grid.fill(-1, 0, 12, 2, 1, 19, 'pavers');
-  grid.fill(PLAZA.x0, 0, PLAZA.z0, PLAZA.x1, 1, PLAZA.z1, 'travertine');
+  // Soft clay path from spawn up to the plaza (replace grass at y=-1; standing outdoors is y=0).
+  grid.fill(-1, -1, 12, 2, 0, 19, 'pavers');
+  grid.fill(PLAZA.x0, -1, PLAZA.z0, PLAZA.x1, 0, PLAZA.z1, 'travertine');
 
   // Gallery (west) — peach pavilion, east door toward plaza.
   fillPavilion(grid, GALLERY, 'planks', 'clay_peach');
@@ -121,41 +121,41 @@ export function build({ grid, layer, materials }) {
   foot(0.5, 7.2, 2.5, 0.5);
   hot('about', 0.5, 0, 7.2, 3, 2.4, 2);
 
-  // Gallery interior: table + books + accent lamp.
-  B.box(-13, 0, 3, 2.2, 0.75, 1.1, { tex: 'oak' });
-  B.box(-13, 0.75, 3, 2.2, 0.08, 1.1, { tex: 'wood_panel' });
-  B.box(-15.2, 0, 5.2, 1.4, 1.8, 0.4, { tex: 'bookshelf', top: 'wood_panel' });
-  B.box(-13, 1.9, 5.6, 0.35, 0.12, 0.35, glow(WARM));
-  bakes.push({ id: 'gallery-lamp', position: [-13, 2.1, 5.6], power: 2.4, radius: 8, direction: [0, -1, 0] });
+  // Gallery interior: table + books + accent lamp (sit on pavilion floor top at y=1).
+  B.box(-13, 1, 3, 2.2, 0.75, 1.1, { tex: 'oak' });
+  B.box(-13, 1.75, 3, 2.2, 0.08, 1.1, { tex: 'wood_panel' });
+  B.box(-15.2, 1, 5.2, 1.4, 1.8, 0.4, { tex: 'bookshelf', top: 'wood_panel' });
+  B.box(-13, 2.9, 5.6, 0.35, 0.12, 0.35, glow(WARM));
+  bakes.push({ id: 'gallery-lamp', position: [-13, 3.1, 5.6], power: 2.4, radius: 8, direction: [0, -1, 0] });
   foot(-13, 3, 2.4, 1.3);
   foot(-15.2, 5.2, 1.5, 0.5);
-  hot('works', -13, 0, 3, 8, 3.2, 8);
+  hot('works', -13, 1, 3, 8, 3.2, 8);
   plane(1.6, 0.55, signTexture('GALLERY', '#f4b8c5'), -8.05, 2.4, 3, Math.PI / 2);
 
-  // Console racks + glowing panels.
+  // Console racks + glowing panels (on pavilion floor top at y=1).
   for (const z of [1, 3, 5]) {
-    B.box(15.2, 0, z, 1.6, 1.6, 0.7, { tex: 'steel' });
-    B.box(14.35, 0.45, z, 0.06, 0.7, 0.5, glow(SKY));
+    B.box(15.2, 1, z, 1.6, 1.6, 0.7, { tex: 'steel' });
+    B.box(14.35, 1.45, z, 0.06, 0.7, 0.5, glow(SKY));
     foot(15.2, z, 1.8, 0.9);
   }
-  B.box(12.2, 0, 5.4, 1.4, 0.75, 0.8, { tex: 'deepslate' });
-  B.box(12.2, 0.75, 5.4, 1.2, 0.05, 0.55, glow(0x9fd3ff));
-  bakes.push({ id: 'console-desk', position: [12.2, 1.1, 5.4], power: 2.2, radius: 7, direction: null });
+  B.box(12.2, 1, 5.4, 1.4, 0.75, 0.8, { tex: 'deepslate' });
+  B.box(12.2, 1.75, 5.4, 1.2, 0.05, 0.55, glow(0x9fd3ff));
+  bakes.push({ id: 'console-desk', position: [12.2, 2.1, 5.4], power: 2.2, radius: 7, direction: null });
   foot(12.2, 5.4, 1.6, 1);
-  hot('omc', 13.5, 0, 3, 8, 3.2, 8);
+  hot('omc', 13.5, 1, 3, 8, 3.2, 8);
   plane(1.6, 0.55, signTexture('OMC', '#b8e0d2'), 8.95, 2.4, 3, -Math.PI / 2);
 
-  // Tavern bar + warm screen.
-  B.box(16, 0, 16, 3.2, 1.05, 0.7, { tex: 'walnut' });
-  B.box(14.2, 0, 14.2, 0.7, 0.45, 0.7, paint(CHOCO));
-  B.box(17.4, 1.2, 18.6, 1.8, 1.05, 0.08, paint(0x1c1f21));
-  B.box(17.4, 1.28, 18.55, 1.55, 0.82, 0.04, glow(0x7ec8ff, 0.85));
-  B.box(14.8, 1.85, 15.2, 0.4, 0.15, 0.4, glow(WARM));
-  bakes.push({ id: 'tavern-lamp', position: [14.8, 2.0, 15.2], power: 2.6, radius: 8, direction: [0, -1, 0] });
+  // Tavern bar + warm screen (on pavilion floor top at y=1).
+  B.box(16, 1, 16, 3.2, 1.05, 0.7, { tex: 'walnut' });
+  B.box(14.2, 1, 14.2, 0.7, 0.45, 0.7, paint(CHOCO));
+  B.box(17.4, 2.2, 18.6, 1.8, 1.05, 0.08, paint(0x1c1f21));
+  B.box(17.4, 2.28, 18.55, 1.55, 0.82, 0.04, glow(0x7ec8ff, 0.85));
+  B.box(14.8, 2.85, 15.2, 0.4, 0.15, 0.4, glow(WARM));
+  bakes.push({ id: 'tavern-lamp', position: [14.8, 3.0, 15.2], power: 2.6, radius: 8, direction: [0, -1, 0] });
   foot(16, 16, 3.4, 0.9);
   foot(14.2, 14.2, 0.9, 0.9);
   foot(17.4, 18.6, 2, 0.4);
-  hot('tv', 14.5, 0, 16, 8, 3.2, 7);
+  hot('tv', 14.5, 1, 16, 8, 3.2, 7);
   plane(1.6, 0.55, signTexture('LUNATV', '#c9b8e0'), 9.95, 2.4, 16, -Math.PI / 2);
 
   // Lighthouse lantern glow + sign.
