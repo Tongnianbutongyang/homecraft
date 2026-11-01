@@ -13,13 +13,16 @@ export const LIGHTHOUSE = { x: 0, z: -10, r: 2, height: 10 };
 
 export const MAILBOX = { x: -6.5, z: 24.5, yaw: Math.PI };
 export const PORTAL = { x: 8, z: 25.5, yaw: Math.PI };
+// OpenMausBot kiosk on the south lawn, between path and mailbox.
+export const BOT_KIOSK = { x: -3.5, z: 21.5 };
 
 export const STATIONS = [
   { id: 'about', name: '工作室', en: 'Studio', icon: 'seal', at: [0.5, 10.2], look: [0.5, 7.5] },
   { id: 'works', name: '展厅', en: 'Gallery', icon: 'works', at: [-8.5, 3], look: [-13, 3] },
   { id: 'omc', name: '控制台', en: 'Console', icon: 'lab', at: [8.5, 3], look: [13.5, 3] },
   { id: 'lighthouse', name: '灯塔', en: 'Lighthouse', icon: 'eye', at: [0.5, -6.2], look: [0, -10] },
-  { id: 'tv', name: '酒馆', en: 'Tavern', icon: 'coffee', at: [9.2, 16], look: [14.5, 16] },
+  { id: 'tv', name: '影视', en: 'LunaTV', icon: 'coffee', at: [9.2, 16], look: [14.5, 16] },
+  { id: 'bot', name: '助手', en: 'OpenMausBot', icon: 'chat', at: [BOT_KIOSK.x, BOT_KIOSK.z - 1.8], look: [BOT_KIOSK.x, BOT_KIOSK.z] },
   { id: 'mailbox', name: '留言', en: 'Mailbox', icon: 'mail', at: [MAILBOX.x, MAILBOX.z - 1.6], look: [MAILBOX.x, MAILBOX.z] },
   { id: 'portal', name: '传送门', en: 'Portal', icon: 'portal', at: [PORTAL.x + Math.sin(PORTAL.yaw) * 2.4, PORTAL.z + Math.cos(PORTAL.yaw) * 2.4], look: [PORTAL.x, PORTAL.z] },
 ];

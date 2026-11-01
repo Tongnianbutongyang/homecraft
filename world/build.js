@@ -6,7 +6,7 @@ import { BoxBatch } from '@engine/world/blocks.js';
 import { canvasTexture } from '@engine/world/textures.js';
 import { pixelText, textWidth } from '@engine/world/pixel-text.js';
 import {
-  ISLAND, TREES, PLAZA, GALLERY, CONSOLE, TAVERN, LIGHTHOUSE,
+  ISLAND, TREES, PLAZA, GALLERY, CONSOLE, TAVERN, LIGHTHOUSE, BOT_KIOSK,
 } from './layout.js';
 
 const CREAM = 0xf5efe6;
@@ -156,7 +156,7 @@ export function build({ grid, layer, materials }) {
   foot(14.2, 14.2, 0.9, 0.9);
   foot(17.4, 18.6, 2, 0.4);
   hot('tv', 14.5, 0, 16, 8, 3.2, 7);
-  plane(1.6, 0.55, signTexture('TAVERN', '#c9b8e0'), 9.95, 2.4, 16, -Math.PI / 2);
+  plane(1.6, 0.55, signTexture('LUNATV', '#c9b8e0'), 9.95, 2.4, 16, -Math.PI / 2);
 
   // Lighthouse lantern glow + sign.
   B.box(L.x + 0.5, L.height - 1.55, L.z + 0.5, 1.2, 0.35, 1.2, glow(WARM));
@@ -164,6 +164,16 @@ export function build({ grid, layer, materials }) {
   foot(L.x + 0.5, L.z + 0.5, 3.2, 3.2);
   hot('lighthouse', L.x + 0.5, 0, L.z + 0.5, 5, 4, 5);
   plane(1.8, 0.55, signTexture('API', '#a8c5e2'), L.x + 0.5, 3.2, L.z + 2.05);
+
+  // OpenMausBot kiosk — external link only (pairing code).
+  const BK = BOT_KIOSK;
+  B.box(BK.x, 0, BK.z, 0.9, 1.35, 0.9, paint(LAVENDER));
+  B.box(BK.x, 1.35, BK.z, 0.7, 0.08, 0.7, paint(CREAM));
+  B.box(BK.x, 0.55, BK.z + 0.48, 0.55, 0.4, 0.06, glow(0x9fd3ff));
+  B.box(BK.x, 1.55, BK.z, 0.12, 0.55, 0.12, { tex: 'oak' });
+  plane(1.4, 0.45, signTexture('BOT', '#c9b8e0'), BK.x, 1.85, BK.z + 0.5);
+  foot(BK.x, BK.z, 1.1, 1.1);
+  hot('bot', BK.x, 0, BK.z, 3.2, 2.6, 3.2);
 
   // Plaza planters / macaron accents.
   for (const [x, z, tint] of [[-3.2, 5.2, PINK], [3.8, 5.2, MINT], [-3.2, 10.5, LAVENDER], [3.8, 10.5, PEACH]]) {

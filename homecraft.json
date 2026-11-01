@@ -1,12 +1,18 @@
 {
   "version": 1,
-  "name": { "zh": "老猪工作室", "en": "Oldpig Studio" },
+  "name": {
+    "zh": "老猪工作室",
+    "en": "Oldpig Studio"
+  },
   "url": "https://home.oldpig91.com/",
   "logo": "assets/favicon.png",
   "intro": {
-    "zh": "方块世界里的工作室入口：展厅、控制台、API 灯塔与酒馆。",
-    "en": "A blocky studio gate: gallery, console, API lighthouse, and tavern."
+    "zh": "方块世界里的工作室入口：展厅、控制台、API 灯塔、LunaTV 与 OpenMausBot。",
+    "en": "A blocky studio gate: gallery, console, API lighthouse, LunaTV, and OpenMausBot."
   },
-  "lang": ["zh", "en"],
+  "lang": [
+    "zh",
+    "en"
+  ],
   "homecraft": true
 }
